@@ -1,0 +1,19 @@
+.image {
+  padding-bottom: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.col {
+  padding: 5px 5px;
+}
+
+.memory-deck {
+  padding-top: 1rem;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 26px;
+}
+
