@@ -4,51 +4,95 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>memory</title>
+    <title>Memory</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
 <body>
     <nav class="navbar navbar-dark navbar-expand bg-warning">
-        <div class="container"><a class="navbar-brand text-dark" href="#">Memory</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse"
-                id="navcol-1">
+        <div class="container"><a class="navbar-brand text-dark" href="#">Memory</a><button data-toggle="collapse"
+                class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span
+                    class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item" role="presentation"></li>
                     <li class="nav-item" role="presentation"></li>
                     <li class="nav-item" role="presentation"></li>
-                </ul><button class="btn btn-success" type="button" onclick="newGame()">New Game</button></div>
+                </ul><button class="btn btn-success" type="button" onclick="newGame()">Neues Spiel</button>
+            </div>
         </div>
     </nav>
+    <div class="modal fade" role="dialog" tabindex="-1" id="successModal">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Herzlichen Glückwunsch</h4><button type="button" class="close"
+                        data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                </div>
+                <div class="modal-body">
+                    <p>Du hast gewonnen :)</p>
+                </div>
+                <div class="modal-footer"><button class="btn btn-success" type="button" onclick="newGame()"
+                        data-dismiss="modal">Neues Spiel</button><button class="btn btn-primary" type="button"
+                        data-dismiss="modal">Danke</button></div>
+            </div>
+        </div>
+    </div>
     <div class="bg-div">
         <div class="container memory-deck">
             <div class="row">
                 <div class="col">
-                    <div class="border rounded border-light shadow image" id="1" style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
+                    <div class="border rounded border-light shadow card"
+                        style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
                 </div>
                 <div class="col">
-                    <div class="border rounded border-light shadow image" id="2" style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
+                    <div class="border rounded border-light shadow card"
+                        style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
                 </div>
                 <div class="col">
-                    <div class="border rounded border-light shadow image" id="3" style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
+                    <div class="border rounded border-light shadow card"
+                        style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
                 </div>
                 <div class="col">
-                    <div class="border rounded border-light shadow image" id="4" style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
+                    <div class="border rounded border-light shadow card"
+                        style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <div class="border rounded border-light shadow image" id="5" style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
+                    <div class="border rounded border-light shadow card"
+                        style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
                 </div>
                 <div class="col">
-                    <div class="border rounded border-light shadow image" id="6" style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
+                    <div class="border rounded border-light shadow card"
+                        style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
                 </div>
                 <div class="col">
-                    <div class="border rounded border-light shadow image" id="7" style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
+                    <div class="border rounded border-light shadow card"
+                        style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
                 </div>
                 <div class="col">
-                    <div class="border rounded border-light shadow image" id="8" style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
+                    <div class="border rounded border-light shadow card"
+                        style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="border rounded border-light shadow card"
+                        style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
+                </div>
+                <div class="col">
+                    <div class="border rounded border-light shadow card"
+                        style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
+                </div>
+                <div class="col">
+                    <div class="border rounded border-light shadow card"
+                        style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
+                </div>
+                <div class="col">
+                    <div class="border rounded border-light shadow card"
+                        style="background-image: url(&quot;assets/img/back.jpg&quot;);"></div>
                 </div>
             </div>
         </div>

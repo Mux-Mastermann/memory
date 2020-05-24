@@ -1,7 +1,11 @@
-.image {
+.card {
   padding-bottom: 100%;
   background-size: cover;
   background-position: center;
+}
+
+body {
+  height: 100vh;
 }
 
 .col {
@@ -16,4 +20,3 @@
   font-weight: bold;
   font-size: 26px;
 }
-
