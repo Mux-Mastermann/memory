@@ -3,8 +3,10 @@ const images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "
 const boardSize = [3, 4]
 const cards = document.querySelectorAll(".card");
 
+
 // define global variables
 var firstCard, secondCard, wait, flipped
+var preloadedImages = []
 
 // start new game on page loading
 newGame()
@@ -13,6 +15,7 @@ function newGame() {
     // initialize variables
     wait = false
     flipped = false
+    preloadedImages.length = 0;
     // unflip all images
     unflipAllImages();
     // shuffle the board
@@ -31,6 +34,8 @@ function shuffleBoard() {
     const shuffled = images.sort(() => 0.5 - Math.random());
     // slice imageNo images from images 
     imageSet = shuffled.slice(0, imageNo);
+    // preload images
+    preloadImages(imageSet);
     // store used images from imageSet here
     let usedImages = new Array();
     // set start value for card id
@@ -94,6 +99,17 @@ function unflipAllImages() {
     cards.forEach(card => {
         card.style.backgroundImage = 'url("assets/img/back.jpg")'
     });
+}
+
+
+function preloadImages(images) {
+    images.forEach(image => {
+        img = new Image();
+        img.src = "assets/img/" + image;
+        preloadedImages.push(img)
+    });
+    console.log("All images preloaded")
+    console.log(preloadedImages)
 }
 
 
