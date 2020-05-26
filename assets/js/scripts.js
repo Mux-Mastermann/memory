@@ -1,7 +1,8 @@
 // defining constants
 const images = ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg", "9.jpg", "10.jpg", "11.jpg", "12.jpg", "13.jpg", "14.jpg", "15.jpg", "16.jpg", "17.jpg", "18.jpg", "19.jpg", "20.jpg", "21.jpg", "22.jpg", "23.jpg", "24.jpg", "25.jpg", "26.jpg", "27.jpg", "28.jpg", "29.jpg", "30.jpg", "31.jpg", "32.jpg", "33.jpg", "34.jpg", "35.jpg", "36.jpg"]
-const boardSize = [3, 4]
-const cards = document.querySelectorAll(".card");
+const imagePath = "assets/img/"
+var boardSize = [3, 4]
+var cards = document.querySelectorAll(".card");
 
 
 // define global variables
@@ -90,14 +91,14 @@ function turn() {
 
 function flipImage(card) {
     var name = card.getAttribute("name")
-    var url = "assets/img/" + name;
+    var url = imagePath + name;
     card.style.backgroundImage = 'url(' + url + ')'
 }
 
 
 function unflipAllImages() {
     cards.forEach(card => {
-        card.style.backgroundImage = 'url("assets/img/back.jpg")'
+        card.style.backgroundImage = 'url(' + imagePath + "back.jpg" + ')'
     });
 }
 
@@ -105,7 +106,7 @@ function unflipAllImages() {
 function preloadImages(images) {
     images.forEach(image => {
         img = new Image();
-        img.src = "assets/img/" + image;
+        img.src = imagePath + image;
         preloadedImages.push(img)
     });
     console.log("All images preloaded")
@@ -138,4 +139,25 @@ function checkForEnd() {
         console.log("Winner! Game Over!")
         $('#successModal').modal();
     }
+}
+
+
+function changeSize(rows, cols) {
+    boardSize = [rows, cols]
+    document.getElementById("memory-deck").innerHTML = "";
+    for (let i=0;i<rows;i++) {
+        document.getElementById("memory-deck").innerHTML +=
+        '<div class="row"></div>'
+    }
+    document.querySelectorAll(".row").forEach(row => {
+        for (let i=0;i<cols; i++) {
+            row.innerHTML +=
+            '<div class="col">\n'+
+            '    <div class="border rounded border-light shadow card"\n'+
+            '        style="background-image: url(back.jpg); visibility: visible;"></div>\n'+
+            '</div>'
+        }
+    })
+    cards = document.querySelectorAll(".card");
+    newGame();
 }

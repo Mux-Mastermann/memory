@@ -12,7 +12,7 @@ body {
   padding: 5px 5px;
 }
 
-.memory-deck {
+#memory-deck {
   padding-top: 1rem;
 }
 
@@ -20,3 +20,4 @@ body {
   font-weight: bold;
   font-size: 26px;
 }
+
