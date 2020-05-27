@@ -109,8 +109,6 @@ function preloadImages(images) {
         img.src = imagePath + image;
         preloadedImages.push(img)
     });
-    console.log("All images preloaded")
-    console.log(preloadedImages)
 }
 
 
@@ -161,3 +159,13 @@ function changeSize(rows, cols) {
     cards = document.querySelectorAll(".card");
     newGame();
 }
+
+// add event listener for setting changes
+document.getElementById("settingsChange").addEventListener("submit", (e) => {
+    // prevent page from refreshing
+    e.preventDefault();
+    // calling change size function with value of form input
+    changeSize(document.getElementById('rows').value , document.getElementById('cols').value)
+    // dismiss modal
+    $('#settings').modal('hide')
+})
