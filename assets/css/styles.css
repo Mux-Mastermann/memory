@@ -2,6 +2,20 @@
   padding-bottom: 100%;
   background-size: cover;
   background-position: center;
+  transition: -webkit-transform 0.2s ease;
+}
+
+@media (min-width: 992px) {
+  .card:hover {
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+  }
+}
+
+.card:active {
+  -webkit-transform: scale(0.93);
+  transform: scale(0.93);
+  transition: 0.1s;
 }
 
 body {
